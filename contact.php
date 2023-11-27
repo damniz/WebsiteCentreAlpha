@@ -17,10 +17,13 @@ $body_message .= "Message: ". $field_message;
 $headers = "From: ".$field_email."\r\n";
 $headers .= "Reply-To: ".$field_email."\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+$headers .= "Content-Transfer-Encoding: 8bit\r\n";
 
-// Encode the subject and body using UTF-8
-$subject = '=?UTF-8?B?'.base64_encode($subject).'?='; // Subject
-$body_message = mb_convert_encoding($body_message, 'UTF-8'); // Body
+// Encode the subject using mb_encode_mimeheader
+$subject = mb_encode_mimeheader($subject, "UTF-8");
+
+// Encode the body using mb_convert_encoding
+$body_message = mb_convert_encoding($body_message, 'UTF-8');
 
 $mail_status = mail($mail_to, $subject, $body_message, $headers);
 
