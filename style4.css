@@ -1,0 +1,170 @@
+@font-face
+{
+    font-family: 'montserratregular';
+    src: url('fonts/montserrat-regular-webfont.eot');
+    src: url('fonts/montserrat-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/montserrat-regular-webfont.woff2') format('woff2'),
+         url('fonts/montserrat-regular-webfont.woff') format('woff'),
+         url('fonts/Montserrat-Regular.ttf') format('truetype'),
+         url('fonts/montserrat-regular-webfont.svg#montserratregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'accompanio';
+    src: /*url('fonts/quicksand-regular-webfont.woff2') format('woff2'),
+         url('fonts/quicksand-regular-webfont.woff') format('woff'),*/
+         url('fonts/Quicksand-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.selector-for-some-widget
+{
+  box-sizing: content-box;
+}
+
+*
+{
+	font-family: 'accompanio','montserratregular', sans-serif;
+}
+
+header
+{
+	font-color: rgb(93,107,99);
+	font-style: bold;
+}
+
+h3, h1, h4
+{
+	text-align: center;
+}
+
+h3, h4
+{
+	font-style: bold;
+}
+
+p, ul
+{
+	/*padding: 24px;*/
+	font-color: rgb(93,107,99);
+	text-align: justify;
+	font-size: 0.85rem;
+}
+
+#conteneur
+{
+	display: flex;
+/*	flex-wrap: wrap;*/
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1rem;
+	margin-bottom: 5rem;
+}
+
+
+.flottant
+{
+	float: left;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.autreparagraphe
+{
+	clear: both;
+}
+
+.image_paragraphe
+{
+	clear: both;
+	display: inline-block;
+}
+
+img
+{
+	margin-right: 1rem;
+	margin-bottom: 0.5rem;
+	max-width: 100%;
+	height: auto;
+}
+
+#Adress
+{
+	font-size: 0.8em;
+	text-align: center;
+  	color: rgb(93,107,99);
+  	background-color: transparent;
+  	border-bottom: .25rem solid transparent;
+  	padding: 24px;
+  	text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+}
+
+strong
+{
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+#title
+{
+	text-decoration: underline;
+}
+
+.element:nth-child(1)
+{
+	margin-top: 5rem;
+	text-align: justify;
+}
+
+footer a
+{
+  padding: .25rem 0;
+  color: rgb(93,107,99);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+footer
+{
+  font-weight: bold;
+}
+
+main a
+{
+  color: rgb(93,107,99);
+}
+
+form
+{
+	text-align: center;
+}
+
+:focus
+{
+    background-color: rgb(214,221,226);
+}
+
+.note
+{
+	font-height: 0.5rem;
+	text-align: center;
+}
+
+/*
+@media screen and (max-width: 488px)
+{
+    p
+    {
+        font-size: 0.7rem;
+    }
+    #Adress
+	{
+		font-size: 0.55rem;
+
+	}
+}
+*/

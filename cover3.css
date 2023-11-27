@@ -1,0 +1,164 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: rgba(140, 159, 166, .5);
+}
+
+/* Custom default button
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body`
+  background-color: #fff;
+  border: .05rem solid #fff;
+}
+*/
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+  background-color: rgb(255,255,255);
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  color: rgb(93,107,99);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
+
+.cover-container {
+  max-width: 50em;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex-grow: 1;
+  min-height: 100%;
+}
+
+.list {
+  padding-left: 0;
+}
+
+/*
+ * Header
+ */
+.masthead {
+  margin-bottom: 2rem;
+}
+
+.masthead-brand {
+  margin-bottom: 0;
+  margin-left: 24px;
+  font-weight: 700;
+}
+
+.nav-masthead .nav-link {
+  padding: .25rem 0;
+  font-weight: 700;
+  color: rgba(140, 159, 166, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+  text-shadow: 0 .05rem .05rem rgba(0, 0, 0, .5);
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(138,153,145, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 1rem;
+}
+
+.nav-masthead .active {
+  color: rgb(53,65,68);
+  border-bottom-color: rgb(93,107,99);
+}
+
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+  .nav-masthead {
+    float: right;
+  }
+}
+
+
+/*
+ * Cover
+ */
+.cover {
+  padding: 0 1.5rem;
+}
+.cover .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: 700;
+}
+
+
+/*
+ * Footer
+ */
+.mastfoot {
+  color: rgb(93,107,99);
+}
+
+#toggle-info-1, #toggle-info-2, #toggle-info-3, #toggle-info-4, #toggle-info-5, #toggle-info-6, #toggle-info-7 {
+  cursor: pointer;
+
+}
+
+#toggle-info-1:hover
+{
+  color: rgba(140, 159, 166, .5);
+}
+
+#toggle-info-2:hover
+{
+  color: rgba(140, 159, 166, .5);
+}
+
+#toggle-info-3:hover
+{
+  color: rgba(140, 159, 166, .5);
+}
+
+#toggle-info-4:hover
+{
+  color: rgba(140, 159, 166, .5);
+}
+
+#toggle-info-5:hover
+{
+  color: rgba(140, 159, 166, .5);
+}
+
+#toggle-info-6:hover
+{
+  color: rgba(140, 159, 166, .5);
+}
+
+#toggle-info-7:hover
+{
+  color: rgba(140, 159, 166, .5);
+}
+
+#info-panel-1, #info-panel-2, #info-panel-3, #info-panel-4, #info-panel-5, #info-panel-6, #info-panel-7 {
+  display: none;
+}
