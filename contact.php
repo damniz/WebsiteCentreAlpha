@@ -11,7 +11,7 @@ $subject = 'Message d\'un visiteur du site web : '.$field_name;
 $body_message = "De: ". $field_name ."\n";
 $body_message .= "Téléphone: ". $field_tel ."\n";
 $body_message .= "E-mail: ". $field_email ."\n";
-$body_message .= "Message: ". $field_message;
+$body_message .= "Message:"."\n". $field_message;
 
 // Set the appropriate headers
 $headers = "From: ".$field_email."\r\n";
