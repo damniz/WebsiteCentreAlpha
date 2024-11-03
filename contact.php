@@ -4,6 +4,15 @@ $field_tel = $_POST['tel'];
 $field_email = $_POST['email'];
 $field_message = $_POST['message'];
 
+if (!empty($_POST['honeypot'])) {
+    <script language="javascript" type="text/javascript">
+        alert('Le message n\'a pas pu être délivré. Merci de nous envoyer un mail à nivelles@centrealpha.be ou nous laisser un message au numéro +32 67 67 09 89.');
+        window.location = 'http://www.centrealpha.be/contact.html';
+    </script>
+    <?php
+    exit;
+}
+
 $mail_to = 'nivelles@centrealpha.be';
 $subject = 'Message d\'un visiteur du site web : '.$field_name;
 

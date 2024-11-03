@@ -53,6 +53,10 @@
             l'un.e de nos thérapeutes directement, nous vous conseillons de prendre contact avec elle / lui (voir
             coordonnées sur la page <a href="equipe.html">"<strong>Equipe</strong>"</a>).<br/><br/><br/><br/></p></div>
           <form action="contact.php" method="post">
+            <!-- Champ honeypot caché -->
+            <input type="text" name="honeypot" style="display:none;">
+          </form>
+          <form action="contact.php" method="post">
           <fieldset>
             <legend>Formulaire de contact</legend><br/>
             <label for="name">Prénom & Nom * :</label><br/>
