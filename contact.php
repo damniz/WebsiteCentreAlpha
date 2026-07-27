@@ -1,4 +1,27 @@
 <?php
+require __DIR__ . '/recaptcha-config.php';
+$recaptcha_response = $_POST['g-recaptcha-response'] ?? '';
+
+$ch = curl_init('https://www.google.com/recaptcha/api/siteverify');
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, [
+    'secret' => $recaptcha_secret,
+    'response' => $recaptcha_response,
+]);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$verify = curl_exec($ch);
+curl_close($ch);
+$captcha_success = json_decode($verify)->success ?? false;
+
+if (!$captcha_success) { ?>
+	<script language="javascript" type="text/javascript">
+		alert('Merci de cocher la case "Je ne suis pas un robot" avant d\'envoyer le formulaire.');
+		window.location = 'http://www.centrealpha.be/contact.html';
+	</script>
+<?php
+	exit;
+}
+
 $field_name = $_POST['name'];
 $field_tel = $_POST['tel'];
 $field_email = $_POST['email'];
