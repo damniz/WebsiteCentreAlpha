@@ -260,3 +260,55 @@ footer a
   	padding: 24px;
   	text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
 }
+
+/*
+ * Structure des titres (rendu identique à l'ancien balisage)
+ */
+
+/* Logo de l'en-tête : lien vers l'accueil (anciennement un <h3>) */
+.masthead-brand
+{
+	display: block;
+	text-align: center;
+	font-size: 1.75rem;
+	line-height: 1.2;
+}
+
+/* Accueil : sous-titre intégré au <h1> */
+.sous-titre
+{
+	display: block;
+	margin-top: .5rem;
+	font-size: 1.5rem;
+	letter-spacing: normal;
+}
+
+/* Equipe : un bloc par praticien, le nom en <h2> (anciennement <p><strong>) */
+.image_paragraphe
+{
+	margin-bottom: 1rem;
+	font-size: 0.85rem;
+	text-align: justify;
+}
+
+.image_paragraphe p
+{
+	margin: 0;
+	font-size: inherit;
+}
+
+.nom
+{
+	margin: 0;
+	font-size: inherit;
+	font-weight: bold;
+	line-height: inherit;
+	text-decoration: underline;
+}
+
+/* Titre principal des pages intérieures */
+.titre-page
+{
+	font-size: 1.5rem;
+	margin-bottom: 1.5rem;
+}
