@@ -1,62 +1,52 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
-  <meta charset="utf-8">
-  <title>Page Not Found</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    * {
-      line-height: 1.2;
-      margin: 0;
-    }
-
-    html {
-      color: #888;
-      display: table;
-      font-family: sans-serif;
-      height: 100%;
-      text-align: center;
-      width: 100%;
-    }
-
-    body {
-      display: table-cell;
-      vertical-align: middle;
-      margin: 2em auto;
-    }
-
-    h1 {
-      color: #555;
-      font-size: 2em;
-      font-weight: 400;
-    }
-
-    p {
-      margin: 0 auto;
-      width: 280px;
-    }
-
-    @media only screen and (max-width: 280px) {
-
-      body,
-      p {
-        width: 95%;
-      }
-
-      h1 {
-        font-size: 1.5em;
-        margin: 0 0 0.3em;
-      }
-
-    }
-  </style>
+  <link rel="icon" type="image/png" href="/pics/FAVICON_CENTRE_ALPHA.png"/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Absolute paths: this page can be served at any URL -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Page introuvable · Centre Alpha Nivelles</title>
+  <meta name="robots" content="noindex"/>
 </head>
 
 <body>
-  <h1>Page Not Found</h1>
-  <p>Sorry, but the page you were trying to view does not exist.</p>
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand"><img src="/pics/LOGO_CENTRE_ALPHA_horiz.png" alt="Centre Alpha"></h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link" href="/index.html">Accueil</a>
+        <a class="nav-link" href="/equipe.html">Equipe</a>
+        <a class="nav-link" href="/formations.html">Formations</a>
+        <a class="nav-link" href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="inner cover">
+    <div id="conteneur">
+      <div class="element 1">
+        <h1 style="font-size:1.5rem">Page introuvable</h1>
+        <p class="note">La page que vous cherchez n'existe pas ou a été déplacée.</p>
+        <p class="note">Vous pouvez retourner à <a href="/index.html">l'accueil</a>, consulter
+          <a href="/equipe.html">notre équipe</a> ou <a href="/contact.html">nous contacter</a>.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="mastfoot mt-auto">
+    <p id="Adress">Centre ALPHA Nivelles, un centre Accompanio SRL<br/><a
+      href="https://www.google.be/maps/place/Centre+ALPHA/@50.5991868,4.3222558,19z/data=!3m1!4b1!4m5!3m4!1s0x47c233fab282f3c3:0x4f092d7ebe8b1cd!8m2!3d50.599186!4d4.322803"
+      title="Google Maps" target="_blank">9 A/B rue Ste-Anne, 1400 Nivelles</a><br/>+32 (0)67 67 09 89<br/><a
+      href="mailto:nivelles@centrealpha.be" title="Envoyer un email">nivelles@centrealpha.be</a><br/>TVA BE0675.828.494<br/><a
+      href="/confidentialite.html">Mentions légales et confidentialité</a>
+    </p>
+  </footer>
+</div>
+
 </body>
 
 </html>
-<!-- IE needs 512+ bytes: https://docs.microsoft.com/archive/blogs/ieinternals/friendly-http-error-pages -->
