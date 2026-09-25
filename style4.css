@@ -169,3 +169,10 @@ form
 	}
 }
 */
+
+.texte-legal h2
+{
+	font-size: 1.1rem;
+	font-weight: bold;
+	margin-top: 2rem;
+}
