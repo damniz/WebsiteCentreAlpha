@@ -43,6 +43,12 @@ body {
   padding: 0;
 }
 
+/* Always reserve the scrollbar's space, so that short pages (no scrollbar)
+   are not shifted sideways compared with long ones. */
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   display: -ms-flexbox;
   display: flex;
