@@ -1,12 +1,14 @@
 {
-  "short_name": "",
-  "name": "",
-  "icons": [{
-    "src": "icon.png",
-    "type": "image/png",
-    "sizes": "192x192"
-  }],
-  "start_url": "/?utm_source=homescreen",
-  "background_color": "#fafafa",
-  "theme_color": "#fafafa"
+  "name": "Centre ALPHA Nivelles",
+  "short_name": "Centre ALPHA",
+  "description": "Consultations psychologiques et formations à Nivelles",
+  "lang": "fr",
+  "icons": [
+    { "src": "/pics/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/pics/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ],
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff"
 }
