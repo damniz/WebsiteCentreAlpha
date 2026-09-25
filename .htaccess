@@ -333,15 +333,23 @@ AddDefaultCharset utf-8
 #     https://www.iana.org/assignments/well-known-uris/well-known-uris.xhtml
 #     https://tools.ietf.org/html/draft-ietf-acme-acme-12
 
-# <IfModule mod_rewrite.c>
-#    RewriteEngine On
-#    RewriteCond %{HTTPS} !=on
-#    # (1)
-#    # RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/
-#    # RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[\w-]+$
-#    # RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
-#    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
-# </IfModule>
+# Centre Alpha: single canonical address https://www.centrealpha.be
+# (forces HTTPS and the `www.` in one 301 redirect).
+# The site sits behind an nginx proxy: X-Forwarded-Proto is also checked so
+# that HTTPS requests forwarded as HTTP do not loop.
+
+<IfModule mod_rewrite.c>
+   RewriteEngine On
+   # (1)
+   RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/
+   RewriteCond %{HTTPS} !=on
+   RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+   RewriteRule ^ https://www.centrealpha.be%{REQUEST_URI} [R=301,L]
+
+   RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/
+   RewriteCond %{HTTP_HOST} !^www\. [NC]
+   RewriteRule ^ https://www.centrealpha.be%{REQUEST_URI} [R=301,L]
+</IfModule>
 
 # ----------------------------------------------------------------------
 # | Suppressing the `www.` at the beginning of URLs                    |
@@ -366,23 +374,25 @@ AddDefaultCharset utf-8
 #
 #     https://github.com/h5bp/server-configs-apache/issues/52
 
-<IfModule mod_rewrite.c>
+# Disabled: the canonical address keeps the `www.` (see "Forcing `https://`").
 
-    RewriteEngine On
-
-    # (1)
-    RewriteCond %{HTTPS} =on
-    RewriteRule ^ - [E=PROTO:https]
-    RewriteCond %{HTTPS} !=on
-    RewriteRule ^ - [E=PROTO:http]
-
-    # (2)
-    # RewriteCond %{HTTPS} !=on
-
-    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-    RewriteRule ^ %{ENV:PROTO}://%1%{REQUEST_URI} [R=301,L]
-
-</IfModule>
+# <IfModule mod_rewrite.c>
+#
+#     RewriteEngine On
+#
+#     # (1)
+#     RewriteCond %{HTTPS} =on
+#     RewriteRule ^ - [E=PROTO:https]
+#     RewriteCond %{HTTPS} !=on
+#     RewriteRule ^ - [E=PROTO:http]
+#
+#     # (2)
+#     # RewriteCond %{HTTPS} !=on
+#
+#     RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+#     RewriteRule ^ %{ENV:PROTO}://%1%{REQUEST_URI} [R=301,L]
+#
+# </IfModule>
 
 # ----------------------------------------------------------------------
 # | Forcing the `www.` at the beginning of URLs                        |
@@ -646,6 +656,12 @@ AddDefaultCharset utf-8
 # https://www.html5rocks.com/en/tutorials/security/transport-layer-security/
 # https://blogs.msdn.microsoft.com/ieinternals/2014/08/18/strict-transport-security/
 # https://hstspreload.org/
+
+# Centre Alpha: short max-age (1 day) while the HTTPS redirect is being
+# validated; raise to 31536000 (1 year) once everything works.
+<IfModule mod_headers.c>
+    Header always set Strict-Transport-Security "max-age=86400" "expr=%{HTTPS} == 'on' || %{HTTP:X-Forwarded-Proto} == 'https'"
+</IfModule>
 
 # <IfModule mod_headers.c>
 #     Header always set Strict-Transport-Security "max-age=16070400; includeSubDomains" "expr=%{HTTPS} == 'on'"
